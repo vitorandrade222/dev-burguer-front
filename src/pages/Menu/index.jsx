@@ -9,7 +9,8 @@ import {
   Container,
   Banner,
   ProductsContainer,
-  CategoryButtom
+  CategoryButtom,
+  ButtomBack
 } from "./styles.js"
 
 export function Menu() {
@@ -104,8 +105,13 @@ export function Menu() {
 
           >{category.name} </CategoryButtom>
         ))}
-      </CategoriesMenu>
 
+
+        <ButtomBack onClick={() => {
+          navigate('/home')
+        }}> Home</ButtomBack>
+
+      </CategoriesMenu>
       <ProductsContainer>
         {filteredProducts.map((product) => (
           <CardProduct product={product} key={product.id} />

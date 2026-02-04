@@ -43,10 +43,12 @@ export const Banner = styled.div`
   }
 `;
 export const CategoriesMenu = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 70px;
   margin-top: 50px;
+  padding-bottom: 120px;
 `;
 
 export const CategoryButtom = styled(Link)`
@@ -70,4 +72,29 @@ export const ProductsContainer = styled.div`
 
   max-width: 1280px;
   margin: 40px auto;
+`;
+
+export const ButtomBack = styled(Link)`
+  position: absolute;
+  bottom: 20px; /* distância dos produtos */
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 25px;
+  cursor: pointer;
+  color: #fff;
+  height: 50px;
+  width: 200px;
+  background: #8758a6;
+  border-radius: 5px;
+  border: 0;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #412a50;
+  }
 `;

@@ -7,7 +7,7 @@ import { Menu } from '../pages/Menu'
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/home',
     element: <Home />
   },
 
