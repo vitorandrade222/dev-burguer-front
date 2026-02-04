@@ -1,0 +1,73 @@
+import styled from 'styled-components';
+import BannerHamburguer from '../../assets/banner-menu.svg';
+import BackgroundHome from '../../assets/backgroud-home.svg';
+import { Link } from 'react-router-dom';
+
+export const Container = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  background: url('${BackgroundHome}');
+`;
+
+export const Banner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 480px;
+
+  background: url('${BannerHamburguer}');
+  background-color: #1f1f1f;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  h1 {
+    font-family: 'Road Rage', sans-serif;
+    font-weight: 400;
+    font-size: 96.26px;
+    line-height: 69%;
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    text-align: center;
+  }
+
+  span {
+    color: #fff;
+    position: absolute;
+    bottom: 21%;
+    right: 22%;
+  }
+`;
+export const CategoriesMenu = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+`;
+
+export const CategoryButtom = styled(Link)`
+  text-decoration: none;
+  background: none;
+  color: ${(props) => (props.$isActiveCategory ? ' #9758a6' : '#525252')};
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 20px;
+  padding-bottom: 5px;
+  border: none;
+  border-bottom: ${(props) => props.$isActiveCategory && '3px solid #9758a6'};
+`;
+
+export const ProductsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px;
+  gap: 60px;
+
+  max-width: 1280px;
+  margin: 40px auto;
+`;

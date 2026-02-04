@@ -1,0 +1,15 @@
+import styled from 'styled-components';
+
+export const ContainerButtton = styled.button`
+  background-color: #9758a6;
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 30px;
+  color: #fff;
+
+  &:hover {
+    background-color: #8b3f9e;
+  }
+`;
