@@ -1,9 +1,11 @@
 import { CategoriesCarousel } from "../../components/CategoriesCarousel";
 import { OffersCarousel } from "../../components/OffersCarousel";
-import { CardProduct } from '../../components/CardProduct'
+
 import { Banner, Container } from "./styles";
+import { useUser } from "../../hooks/UserContext";
 
 export function Home() {
+  console.log(useUser())
   return (
     <main>
       <Banner>
@@ -15,5 +17,7 @@ export function Home() {
           <OffersCarousel />
         </div>
       </Container>
-    </main>)
+    </main>
+  )
+
 }

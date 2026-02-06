@@ -109,7 +109,7 @@ export function Menu() {
 
         <ButtomBack onClick={() => {
           navigate('/home')
-        }}> Home</ButtomBack>
+        }} > Voltar</ButtomBack>
 
       </CategoriesMenu>
       <ProductsContainer>

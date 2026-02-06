@@ -82,19 +82,18 @@ export const ButtomBack = styled(Link)`
 
   font-size: 25px;
   cursor: pointer;
-  color: #fff;
-  height: 50px;
-  width: 200px;
-  background: #8758a6;
+  color: #9758a6;
+
   border-radius: 5px;
   border: 0;
   text-decoration: none;
   font-weight: bold;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   &:hover {
-    background-color: #412a50;
+    color: #412a50;
   }
 `;
