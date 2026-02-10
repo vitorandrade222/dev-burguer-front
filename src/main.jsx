@@ -7,6 +7,7 @@ import { router } from './routes'
 import AppProvider from './hooks'
 
 import GlobalStyles from './styles/GlobalStyles.js';
+import { Header } from './components/Header/index.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

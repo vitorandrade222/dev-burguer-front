@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 import { useNavigate } from 'react-router-dom';
 
+import { useUser } from '../../hooks/UserContext.jsx';
 import { api } from '../../services/api.js';
 import Logo from '../../assets/Logo 1.svg';
 import { Button } from '../../components/Button/index.jsx';
@@ -21,6 +22,7 @@ import {
 
 export function Login() {
   const navigate = useNavigate();
+  const { putUserData } = useUser()
 
   const schema = yup
     .object({
@@ -44,35 +46,44 @@ export function Login() {
   });
 
   console.log(errors);
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
   const onSubmit = async (data) => {
-    const toastId = toast.loading('Entrando na sua conta...',)
-    setTimeout(() => {
-      toast.dismiss(toastId)
+    const toastId = toast.loading('Realizando login...')
 
-    }, 3000)
+    // espera um tempo pra exibir o login com sucesso ou erro.
+    const minLoadingTime = sleep(1500)
+
     try {
-      const response = await api.post('/sessions', {
-        email: data.email,
-        password: data.password,
-      });
+      const response = await api.post('/sessions', data)
 
-      const token = response.data.token
-      localStorage.setItem('token', token)
+      await minLoadingTime
 
-      toast.success('Login realizado com sucesso !!', { id: toastId })
-      setTimeout(() => {
-        navigate('/')
-      }, 2000)
+      const user = response.data.user ?? response.data
+
+      putUserData(user)
+
+      toast.update(toastId, {
+        render: 'Login realizado com sucesso!',
+        type: 'success',
+        isLoading: false,
+        autoClose: 2000,
+      })
+
+      navigate('/home')
 
     } catch (error) {
-      const message = error?.response?.status === 401
-        ? 'Email ou senha inválidos !'
-        : 'Não foi possível entrar. Tente novamente mais tarde !';
-      toast.error(message, { id: toastId })
+      await minLoadingTime
+      toast.update(toastId, {
+        render: 'Email ou senha inválidos!',
+        type: 'error',
+        isLoading: false,
+        autoClose: 3000,
+      })
     }
-
   }
+
+
 
   return (
     <Container>

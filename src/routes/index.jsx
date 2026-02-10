@@ -3,12 +3,18 @@ import { Login } from '../pages/Login'
 import { Register } from '../pages/register'
 import { Home } from '../pages/Home'
 import { Menu } from '../pages/Menu'
-
+import { Header } from '../components/Header'
+import { Cart } from '../pages/Cart'
 
 export const router = createBrowserRouter([
   {
     path: '/home',
-    element: <Home />
+    element: (
+      <>
+        < Header />
+        < Home />
+      </>
+    )
   },
 
   {
@@ -16,12 +22,21 @@ export const router = createBrowserRouter([
     element: <Login />
   },
   {
+    path: '/carrinho',
+    element: <Cart />
+  },
+  {
     path: '/cadastro',
     element: <Register />
   },
   {
     path: '/cardapio',
-    element: <Menu />
+    element: (
+      <>
+        < Header />
+        < Menu />
+      </>
+    )
   }
 
 ])
