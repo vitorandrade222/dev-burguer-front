@@ -31,7 +31,7 @@ export function Header() {
       <Content>
         <Navigation>
           <div>
-            <HeaderLink to="/home" $isActive={pathname === '/home'} >Home</HeaderLink>
+            <HeaderLink to="/" $isActive={pathname === '/'} >Home</HeaderLink>
             <hr />
             <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>Cardápio</HeaderLink>
           </div>
@@ -47,8 +47,11 @@ export function Header() {
             </div>
           </Profile>
           <LinkContainer>
-            <ShoppingCartSimpleIcon color="#fff" size={24} to={"/carrinho"} />
-            <HeaderLink to="/carrinho" > Carrinho </HeaderLink>
+            <HeaderLink to="/carrinho">
+              <ShoppingCartSimpleIcon color="#fff" size={24} />
+              Carrinho
+            </HeaderLink>
+
           </LinkContainer>
         </Options>
       </Content>

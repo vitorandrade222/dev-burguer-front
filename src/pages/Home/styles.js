@@ -14,7 +14,7 @@ export const Banner = styled.div`
     font-family: 'Road Rage', sans-serif;
     font-size: 80px;
     position: absolute;
-    right: 20%;
+    right: 14%;
     top: 10%;
   }
 `;

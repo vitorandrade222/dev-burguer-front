@@ -19,6 +19,8 @@ export const Container = styled.div`
     justify-content: space-between;
     gap: 5px;
 
+    font-family: 'Poppins', sans-serif;
+
     p {
       color: #ff8c05;
       font-size: 18px;
@@ -30,7 +32,7 @@ export const Container = styled.div`
     strong {
       color: #363636;
       font-size: 18px;
-      font-weight: 800;
+      font-weight: bold;
       line-height: 30px;
     }
   }

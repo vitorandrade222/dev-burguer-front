@@ -108,7 +108,7 @@ export function Menu() {
 
 
         <ButtomBack onClick={() => {
-          navigate('/home')
+          navigate('/')
         }} > Voltar</ButtomBack>
 
       </CategoriesMenu>

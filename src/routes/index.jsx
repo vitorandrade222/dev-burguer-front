@@ -1,18 +1,25 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { Login } from '../pages/Login'
-import { Register } from '../pages/register'
-import { Home } from '../pages/Home'
-import { Menu } from '../pages/Menu'
-import { Header } from '../components/Header'
-import { Cart } from '../pages/Cart'
+
+import { Footer, Header } from '../components/index'
+import {
+  Login,
+  Home,
+  Register,
+  Menu,
+  Cart,
+  CompletePayment,
+  Checkout
+} from '../pages'
+
 
 export const router = createBrowserRouter([
   {
-    path: '/home',
+    path: '/',
     element: (
       <>
         < Header />
         < Home />
+        <Footer />
       </>
     )
   },
@@ -20,10 +27,6 @@ export const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />
-  },
-  {
-    path: '/carrinho',
-    element: <Cart />
   },
   {
     path: '/cadastro',
@@ -35,8 +38,21 @@ export const router = createBrowserRouter([
       <>
         < Header />
         < Menu />
+        <Footer />
       </>
     )
-  }
+  },
+  {
+    path: '/carrinho',
+    element: <Cart />
+  },
+  {
+    path: '/checkout',
+    element: <Checkout />
+  },
+  {
+    path: '/complete',
+    element: <CompletePayment />
+  },
 
 ])

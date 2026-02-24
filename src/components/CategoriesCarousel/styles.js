@@ -55,6 +55,8 @@ export const ContainerItens = styled.div`
   margin-top: 40px;
   height: 250px;
   width: 100%;
+
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const CategoryButton = styled(Link)`
@@ -62,7 +64,7 @@ export const CategoryButton = styled(Link)`
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 30px;
   font-size: 22.45px;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 50px;
   margin-top: 50px;
   text-decoration: none;

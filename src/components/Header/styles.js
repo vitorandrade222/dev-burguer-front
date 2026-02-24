@@ -42,6 +42,10 @@ export const HeaderLink = styled(Link)`
   font-size: 14px;
   transition: color 200ms;
 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   &:hover {
     color: #9758a6;
   }
@@ -71,7 +75,7 @@ export const Profile = styled.div`
     }
   }
 `;
-export const LinkContainer = styled(Link)`
+export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;

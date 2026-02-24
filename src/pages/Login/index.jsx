@@ -70,7 +70,7 @@ export function Login() {
         autoClose: 2000,
       })
 
-      navigate('/home')
+      navigate('/')
 
     } catch (error) {
       await minLoadingTime
