@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 export const Banner = styled.div`
   background: url('${texture}');
-  background-color: #1f1f1f;
+  background-color: ${(props) => props.theme.mainBlack};
   background-size: cover;
   background-position: center;
   display: flex;
@@ -24,7 +24,7 @@ export const Banner = styled.div`
   }
 `;
 export const Title = styled.div`
-  color: #61a120;
+  color: ${(props) => props.theme.green};
   font-size: 32px;
   font-weight: 800;
   padding-bottom: 12px;
@@ -38,7 +38,7 @@ export const Title = styled.div`
     content: '';
     width: 57px;
     height: 4px;
-    background-color: #9758a6;
+    background-color: ${(props) => props.theme.purple};
     margin-bottom: 4px;
   }
 `;

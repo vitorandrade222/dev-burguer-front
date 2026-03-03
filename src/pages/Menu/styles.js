@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: ${(props) => props.theme.secondWhite};
   background: url('${BackgroundHome}');
 `;
 
@@ -18,7 +18,7 @@ export const Banner = styled.div`
   height: 480px;
 
   background: url('${BannerHamburguer}');
-  background-color: #1f1f1f;
+  background-color: ${(props) => props.theme.mainBlack};
   background-position: center;
   background-size: cover;
   position: relative;
@@ -28,7 +28,7 @@ export const Banner = styled.div`
     font-weight: 400;
     font-size: 96.26px;
     line-height: 69%;
-    color: #fff;
+    color: ${(props) => props.theme.white};
     position: absolute;
     top: 30%;
     right: 20%;
@@ -36,7 +36,7 @@ export const Banner = styled.div`
   }
 
   span {
-    color: #fff;
+    color: ${(props) => props.theme.white};
     position: absolute;
     bottom: 21%;
     right: 22%;
@@ -54,14 +54,18 @@ export const CategoriesMenu = styled.div`
 export const CategoryButtom = styled(Link)`
   text-decoration: none;
   background: none;
-  color: ${(props) => (props.$isActiveCategory ? ' #9758a6' : '#525252')};
+  color: ${(props) =>
+    props.$isActiveCategory
+      ? (props) => props.theme.purple
+      : (props) => props.theme.darkGray};
   font-size: 24px;
   font-weight: 500;
   cursor: pointer;
   line-height: 20px;
   padding-bottom: 5px;
   border: none;
-  border-bottom: ${(props) => props.$isActiveCategory && '3px solid #9758a6'};
+  border-bottom: ${(props) =>
+    props.$isActiveCategory && ` 3px solid ${(props) => props.theme.purple}`};
 `;
 
 export const ProductsContainer = styled.div`
@@ -82,7 +86,7 @@ export const ButtomBack = styled(Link)`
 
   font-size: 25px;
   cursor: pointer;
-  color: #9758a6;
+  color: ${(props) => props.theme.purple};
 
   border-radius: 5px;
   border: 0;
@@ -94,6 +98,6 @@ export const ButtomBack = styled(Link)`
   align-items: center;
 
   &:hover {
-    color: #412a50;
+    color: ${(props) => props.theme.darkPurple};
   }
 `;

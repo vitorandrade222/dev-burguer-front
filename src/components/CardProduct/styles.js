@@ -7,7 +7,7 @@ export const Container = styled.div`
   gap: 40px;
   padding: 20px;
   border-radius: 28.48px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.white};
   cursor: grab;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
@@ -22,7 +22,7 @@ export const Container = styled.div`
     font-family: 'Poppins', sans-serif;
 
     p {
-      color: #ff8c05;
+      color: ${(props) => props.theme.orange};
       font-size: 18px;
       line-height: 81%;
       font-weight: 700;
@@ -30,7 +30,7 @@ export const Container = styled.div`
     }
 
     strong {
-      color: #363636;
+      color: ${(props) => props.theme.black};
       font-size: 18px;
       font-weight: bold;
       line-height: 30px;

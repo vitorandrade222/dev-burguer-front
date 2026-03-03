@@ -29,7 +29,7 @@ export const Title = styled.h2`
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-style: normal;
-  color: #61a120;
+  color: ${(props) => props.theme.green};
   padding-bottom: 12px;
   position: relative;
   text-align: center;
@@ -42,7 +42,7 @@ export const Title = styled.h2`
     bottom: 0;
     width: 57px;
     height: 4px;
-    background-color: #61a120;
+    background-color: ${(props) => props.theme.green};
     left: calc(50% - 28px);
   }
 `;

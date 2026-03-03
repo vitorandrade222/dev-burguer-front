@@ -51,30 +51,6 @@ export function CartResume() {
       });
     }
 
-    // try {
-    //   const { status } = await api.post(
-    //     '/orders',
-    //     { products },
-    //     {
-    //       validateStatus: () => true
-    //     },
-    //   )
-
-    //   if (status === 201 || status === 200) {
-    //     setTimeout(() => {
-    //       navigate('/');
-    //     }, 2000);
-    //     clearCart()
-    //     toast.success('Pedido realizado com sucesso 🍔!')
-    //   } else if (status === 409) {
-    //     toast.error('Falha ao relizar seu pedido 😥!')
-    //   } else {
-    //     throw new Error()
-    //   }
-    // } catch (error) {
-    //   toast.error('Falha no sistema, tente novamente mais tarde 😒')
-
-    // }
   }
 
   return (

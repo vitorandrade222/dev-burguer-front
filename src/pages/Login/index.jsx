@@ -45,11 +45,11 @@ export function Login() {
     resolver: yupResolver(schema),
   });
 
-  console.log(errors);
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
   const onSubmit = async (data) => {
     const toastId = toast.loading('Realizando login...')
+
 
     // espera um tempo pra exibir o login com sucesso ou erro.
     const minLoadingTime = sleep(1500)
@@ -70,7 +70,12 @@ export function Login() {
         autoClose: 2000,
       })
 
-      navigate('/')
+      if (user?.admin) {
+        navigate('/admin/pedidos')
+      } else {
+        navigate('/')
+
+      }
 
     } catch (error) {
       await minLoadingTime

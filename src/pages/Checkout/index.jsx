@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 import { Elements } from '@stripe/react-stripe-js'
 
-import { CheckoutForm } from '../../components'
+import CheckoutForm from '../../components/Stripe/CheckoutForm'
 import stripePromise from '../../config/stripeConfig'
 
 export function Checkout() {
